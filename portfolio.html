@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Via Margarita Bangoy - Portfolio</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ea2a33",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211111",
+                        "text-light": "#1b0e0e",
+                        "text-dark": "#fcf8f8",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2a1a1a",
+                        "border-light": "#e7d0d1",
+                        "border-dark": "#3d2b2b"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark antialiased transition-colors duration-300">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-accent-nude dark:border-white/10 transition-colors duration-300">
+<div class="max-w-[1440px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+<!-- Left Nav (Desktop) -->
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="index.html">Home</a>
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="about.html">About</a>
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="services.html">Services</a>
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="portfolio.html">Portfolio</a>
+</nav>
+<!-- Logo -->
+<a class="text-xl md:text-2xl font-bold tracking-tight text-center uppercase relative group z-10" href="index.html">
+                Via Margarita Bangoy
+                <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent-gold transition-all duration-300 group-hover:w-full"></span>
+</a>
+<!-- Right Nav (Desktop) -->
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="transformation.html">Transformation</a>
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="workwithme.html">Work With Me</a>
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="contact.html">Contact</a>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="lg:hidden text-text-dark dark:text-white p-2">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Split Hero Section -->
+<div class="relative w-full flex flex-col md:flex-row min-h-[calc(100vh-64px)] overflow-hidden">
+<!-- Left: Finance -->
+<div class="group relative w-full md:w-1/2 h-[50vh] md:h-auto overflow-hidden border-b md:border-b-0 md:border-r border-white/10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="Abstract data visualization on a laptop screen showing financial growth" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDm5dj90H5ER9Sn3rUGQ1MaOZ4EmnKhu6E_yNR94w92FeWLR7WHqJMBcy9BpvVHgy_M7Hp33sedVyAYQfA1vv8Z_RQE2CvQaCm6X9dMbIJzTwP_Dxhrg4uexYno2OjZWYIXRMx8SQP3PrjU5a2GBYCQl2WBmj93-4VHIGC4bp5fmLW-R_BsoOGGifKhvfAp5Jvl0fZ4Ul6l2n9KNIykUc1kfo6Ptl1PvvLxaPLw-0QUBajLfU-NBqRq9ic705hS6T8sVQx5ejjuXQ');">
+</div>
+<div class="absolute inset-0 bg-background-dark/60 group-hover:bg-background-dark/50 transition-colors duration-500"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+<span class="material-symbols-outlined text-5xl text-white mb-4 opacity-80">analytics</span>
+<h2 class="text-4xl md:text-5xl font-black text-white mb-2 tracking-tight">The Analyst</h2>
+<p class="text-gray-200 mb-8 max-w-sm text-sm md:text-base">Precision, strategy, and data-driven insights for modern markets.</p>
+<a class="rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-6 py-3 text-sm font-bold text-white transition-all hover:bg-white hover:text-black" href="#finance">
+                    Explore Strategy
+                </a>
+</div>
+</div>
+<!-- Right: Lifestyle -->
+<div class="group relative w-full md:w-1/2 h-[50vh] md:h-auto overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-top bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="High fashion model posing in an editorial style shoot" style="background-image: url('images/about2.png');">
+</div>
+<div class="absolute inset-0 bg-background-dark/50 group-hover:bg-background-dark/40 transition-colors duration-500"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+<span class="material-symbols-outlined text-5xl text-white mb-4 opacity-80">camera_alt</span>
+<h2 class="text-4xl md:text-5xl font-black text-white mb-2 tracking-tight">The Muse</h2>
+<p class="text-gray-200 mb-8 max-w-sm text-sm md:text-base">Curated aesthetics, editorial modeling, and lifestyle campaigns.</p>
+<a class="rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-6 py-3 text-sm font-bold text-white transition-all hover:bg-white hover:text-black" href="#lifestyle">
+                    View Portfolio
+                </a>
+</div>
+</div>
+</div>
+<!-- Section: Finance -->
+<section class="relative w-full py-20 px-4 md:px-10 bg-background-light dark:bg-background-dark" id="finance">
+<div class="max-w-[1200px] mx-auto">
+<!-- Section Header -->
+<div class="flex flex-col gap-4 mb-12">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="text-xs font-bold uppercase tracking-widest">Financial Strategy</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-bold text-text-light dark:text-white max-w-2xl">
+                    Bridging the gap between raw data and actionable financial narrative.
+                </h2>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<div class="flex flex-col gap-2 p-6 rounded-xl bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="p-2 bg-primary/10 w-fit rounded-lg mb-2">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+</div>
+<p class="text-text-light dark:text-gray-300 text-sm font-medium">Market Models Built</p>
+<p class="text-text-light dark:text-white text-3xl font-bold">50+</p>
+</div>
+<div class="flex flex-col gap-2 p-6 rounded-xl bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="p-2 bg-primary/10 w-fit rounded-lg mb-2">
+<span class="material-symbols-outlined text-primary">assignment_turned_in</span>
+</div>
+<p class="text-text-light dark:text-gray-300 text-sm font-medium">Risk Assessments</p>
+<p class="text-text-light dark:text-white text-3xl font-bold">100+</p>
+</div>
+<div class="flex flex-col gap-2 p-6 rounded-xl bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="p-2 bg-primary/10 w-fit rounded-lg mb-2">
+<span class="material-symbols-outlined text-primary">history</span>
+</div>
+<p class="text-text-light dark:text-gray-300 text-sm font-medium">Years Experience</p>
+<p class="text-text-light dark:text-white text-3xl font-bold">8</p>
+</div>
+</div>
+<!-- Finance Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<a href="workwithme.html#finance" class="group flex flex-col gap-4 cursor-pointer">
+<div class="w-full aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden border border-border-light dark:border-border-dark relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Dashboard screen showing colorful bar charts and data tables" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKDbjUhHW_TnN8zVam6xA3Ud9kiP4kbDakFBRC5i5o_aqw0tcYmTBQlx0SDsLN9TonK6u86yaT--Um6zu5D-n_LDqVYcLpfyRDzYzWcAoGX4sYsD3cAiMcniwrwCtwjTEKsBmkZE7nd2tgOs00mbn4YjOS3c45QMyf_BRLNB8a9_lxK9VoYfEsI_eRRSihmAFYQveCPH2izYdqbHvDkFQODc_e8D0VDhFBlhKsId4xpdCVwNk9aS0_pHxsuxpfOj1ytkVfH5z4QQ');">
+</div>
+</div>
+<div>
+<p class="text-primary text-xs font-bold uppercase mb-1">Data Visualization</p>
+<h3 class="text-text-light dark:text-white text-lg font-bold group-hover:text-primary transition-colors">Q3 Market Forecast Dashboard</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Interactive Tableau dashboard analyzing quarterly shifts.</p>
+</div>
+</a>
+<!-- Card 2 -->
+<a href="workwithme.html#finance" class="group flex flex-col gap-4 cursor-pointer">
+<div class="w-full aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden border border-border-light dark:border-border-dark relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Close up of stock market candles on a monitor screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5I1IKE5pqTsBMKce688hJS6mIYeGX01yyDPhhCzWNzk6jrlrbglnLzIQIHlSPSSM2TJY3eTXQ0c05rEqpL9HBllI0AC1IuBW4mXba9O1BsSDOPoZujli7clQVyMUn0naj0phO1ENlEINTN7YJR4t8IBZdNNP1qwutxnh3yCCj_Wz51WFLlz516AErdXW2dqw3CDSMxlvZib9RXvs5K55RbwMYEHrhXTbVsoGG60p6l2UI8h-rhXWx6u5jzOiochL5-f-oH4eEIQ');">
+</div>
+</div>
+<div>
+<p class="text-primary text-xs font-bold uppercase mb-1">Financial Modeling</p>
+<h3 class="text-text-light dark:text-white text-lg font-bold group-hover:text-primary transition-colors">Tech Valuation Model</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">DCF and Comparable Company Analysis for SaaS startups.</p>
+</div>
+</a>
+<!-- Card 3 -->
+<a href="workwithme.html#finance" class="group flex flex-col gap-4 cursor-pointer">
+<div class="w-full aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden border border-border-light dark:border-border-dark relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Printed business report with graphs on a desk next to a pen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmgnoOjDUsgqMPkLc67G96xLyqAHFVntaIPWoLzryMkvn4JPbMTzaU9r9JRYDJFPHyQPvnLD8iTOadu3GGaiR_k-OGko8822LnZ8BRPWkMeWs6Ss6BeVaPhJup1hc4mdAvZYz2QgkWD1CVNPwwB0MSbw0eVo2yYxAZsLeOxmU1qrcReT8p8YhW0V-OEKm_7hCQGhLoFg_XsQlAPFu8BQZnHHIK3qVmcBlT502PB84_pxHZLwInh0fxGVsQFvS6ckZY2Rx_FRYukQ');">
+</div>
+</div>
+<div>
+<p class="text-primary text-xs font-bold uppercase mb-1">Strategic Analysis</p>
+<h3 class="text-text-light dark:text-white text-lg font-bold group-hover:text-primary transition-colors">Corporate Risk Report</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Comprehensive risk assessment for enterprise clients.</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Section: Lifestyle -->
+<section class="relative w-full py-20 px-4 md:px-10 bg-white dark:bg-surface-dark border-t border-border-light dark:border-border-dark" id="lifestyle">
+<div class="max-w-[1200px] mx-auto">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center gap-4 mb-16">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">shutter_speed</span>
+<span class="text-xs font-bold uppercase tracking-widest">Editorial &amp; Campaigns</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-bold text-text-light dark:text-white">
+                    Capturing moments of strength, elegance, and transformation.
+                </h2>
+</div>
+<!-- Masonry Grid -->
+<div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+<!-- Item 1 -->
+<div class="break-inside-avoid relative group rounded-xl overflow-hidden cursor-zoom-in">
+<img class="w-full h-auto object-cover transition duration-500 group-hover:scale-105" data-alt="Full body shot of a woman in a fashion outfit walking down a street" src="images/VogueFeature.jpg"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+<div class="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<p class="text-white font-bold text-lg">Vogue Feature</p>
+<p class="text-white/80 text-sm">Spring 2023</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="break-inside-avoid relative group rounded-xl overflow-hidden cursor-zoom-in">
+<img class="w-full h-auto object-cover transition duration-500 group-hover:scale-105" data-alt="Woman lifting weights in a gym setting focusing on fitness" src="images/AthleticsBrand.JPG"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+<div class="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<p class="text-white font-bold text-lg">Athletics Brand</p>
+<p class="text-white/80 text-sm">Campaign</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="break-inside-avoid relative group rounded-xl overflow-hidden cursor-zoom-in">
+<img class="w-full h-auto object-cover transition duration-500 group-hover:scale-105" data-alt="High fashion portrait with dramatic lighting and makeup" src="images/EditorialPortrait.png"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+<div class="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<p class="text-white font-bold text-lg">Editorial Portrait</p>
+<p class="text-white/80 text-sm">Studio Series</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="break-inside-avoid relative group rounded-xl overflow-hidden cursor-zoom-in">
+<img class="w-full h-auto object-cover transition duration-500 group-hover:scale-105" data-alt="Woman doing yoga pose on a mat in a bright minimalist room" src="images/Mind&Body.JPG"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+<div class="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<p class="text-white font-bold text-lg">Mind &amp; Body</p>
+<p class="text-white/80 text-sm">Wellness Guide</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="break-inside-avoid relative group rounded-xl overflow-hidden cursor-zoom-in">
+<img class="w-full h-auto object-cover transition duration-500 group-hover:scale-105" data-alt="Woman in a summer dress standing in a field of flowers" src="images/SummerCollection.jpeg"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+<div class="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<p class="text-white font-bold text-lg">Summer Collection</p>
+<p class="text-white/80 text-sm">Lookbook</p>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="break-inside-avoid relative group rounded-xl overflow-hidden cursor-zoom-in">
+<img class="w-full h-auto object-cover transition duration-500 group-hover:scale-105" data-alt="Close up portrait of a woman looking sideways with soft lighting" src="images/RawBeauty.jpg"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+<div class="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<p class="text-white font-bold text-lg">Raw Beauty</p>
+<p class="text-white/80 text-sm">BW Series</p>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<a href="contact.html" class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 border border-gray-300 dark:border-gray-700 bg-transparent text-text-light dark:text-white text-sm font-bold hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span>View All Gallery</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-background-light dark:bg-background-dark py-12 border-t border-border-light dark:border-border-dark" id="contact">
+<div class="max-w-[1200px] mx-auto px-4 md:px-10 flex flex-col items-center justify-center text-center">
+<h2 class="text-2xl md:text-3xl font-bold text-text-light dark:text-white mb-6">Ready to collaborate?</h2>
+<div class="flex gap-4 mb-10">
+<a href="contact.html" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all">
+<span>Get in Touch</span>
+</a>
+<a href="contact.html" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-transparent border border-border-light dark:border-gray-700 text-text-light dark:text-white text-sm font-bold hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">
+<span>Download CV</span>
+</a>
+</div>
+<div class="flex gap-8 mb-8 text-gray-500 dark:text-gray-400">
+<a class="hover:text-primary transition-colors" href="https://linkedin.com" target="_blank"><span class="material-symbols-outlined">work</span></a> <!-- LinkedIn placeholder icon -->
+<a class="hover:text-primary transition-colors" href="https://instagram.com" target="_blank"><span class="material-symbols-outlined">camera</span></a> <!-- Instagram placeholder icon -->
+<a class="hover:text-primary transition-colors" href="mailto:hello@via.com"><span class="material-symbols-outlined">mail</span></a>
+</div>
+<p class="text-xs text-gray-400">© 2024 Via Margarita Bangoy. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services &amp; Collaborations - Via Margarita Bangoy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ea2a33",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211111",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "serif": ["Noto Serif", "serif"], // Added for luxury quotes if needed, falling back to sans
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+
+        // Filter Services Function
+        function filterServices(category) {
+            // Filter cards
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.classList.remove('hidden');
+                    card.classList.add('flex');
+                } else {
+                    card.classList.add('hidden');
+                    card.classList.remove('flex');
+                }
+            });
+
+            // Update buttons
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                const span = btn.querySelector('span');
+                if (btn.dataset.filter === category) {
+                    // Active style
+                    btn.className = "filter-btn flex h-9 shrink-0 items-center justify-center rounded-full bg-primary text-white px-6 shadow-md transition-transform hover:scale-105";
+                    span.className = "text-sm font-bold";
+                } else {
+                    // Inactive style
+                    btn.className = "filter-btn flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/5 border border-[#e5e7eb] dark:border-white/10 px-6 hover:bg-gray-50 dark:hover:bg-white/10 transition-colors";
+                    span.className = "text-[#1b0e0e] dark:text-gray-200 text-sm font-medium";
+                }
+            });
+        }
+
+        // Initialize filter from URL parameter if present
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            
+            if (category) {
+                filterServices(category);
+                
+                // Force scroll to hash if present (fixes issue where filtering shifts layout)
+                if (window.location.hash) {
+                    const targetId = window.location.hash.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                    }
+                }
+            }
+        });
+    </script>
+<style>
+        .service-card:hover .service-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b0e0e] dark:text-[#fcf8f8] font-display overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-accent-nude dark:border-white/10 transition-colors duration-300">
+<div class="max-w-[1440px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+<!-- Left Nav (Desktop) -->
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="index.html">Home</a>
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="about.html">About</a>
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="services.html">Services</a>
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="portfolio.html">Portfolio</a>
+</nav>
+<!-- Logo -->
+<a class="text-xl md:text-2xl font-bold tracking-tight text-center uppercase relative group z-10" href="index.html">
+                Via Margarita Bangoy
+                <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent-gold transition-all duration-300 group-hover:w-full"></span>
+</a>
+<!-- Right Nav (Desktop) -->
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="transformation.html">Transformation</a>
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="workwithme.html">Work With Me</a>
+<a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="contact.html">Contact</a>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="lg:hidden text-text-dark dark:text-white p-2">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center">
+<!-- Hero Section -->
+<section class="w-full px-4 lg:px-40 py-8 lg:py-12 flex justify-center mt-20">
+<div class="max-w-[1080px] w-full">
+<div class="rounded-xl overflow-hidden relative min-h-[480px] flex items-center justify-center p-8 bg-cover bg-center" data-alt="High fashion model holding financial documents in a modern office" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url("images/service.jpg");'>
+<div class="flex flex-col gap-6 text-center max-w-[700px] z-10">
+<h1 class="text-white text-4xl lg:text-6xl font-black leading-tight tracking-tight">
+                                Elevating Brands through Finance &amp; Fashion
+                            </h1>
+<p class="text-white/90 text-base lg:text-lg font-light leading-relaxed">
+                                Bridging the gap between corporate finance and high-end lifestyle through strategic storytelling and visual excellence.
+                            </p>
+<div class="pt-4 flex justify-center gap-4">
+<a href="#services-grid" class="flex items-center justify-center h-12 px-8 bg-primary text-white text-base font-bold rounded-lg hover:bg-red-700 transition-colors shadow-xl">
+                                    View Services
+                                </a>
+<a href="contact.html" class="flex items-center justify-center h-12 px-8 bg-white/10 backdrop-blur-md text-white border border-white/20 text-base font-bold rounded-lg hover:bg-white/20 transition-colors">
+                                    Inquire
+                                </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filters -->
+<section class="w-full px-4 flex justify-center py-4 sticky top-[73px] z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-[#f3e7e8] dark:border-white/5">
+<div class="flex gap-2 lg:gap-3 overflow-x-auto pb-2 lg:pb-0 max-w-[960px] scrollbar-hide">
+<button onclick="filterServices('all')" class="filter-btn flex h-9 shrink-0 items-center justify-center rounded-full bg-primary text-white px-6 shadow-md transition-transform hover:scale-105" data-filter="all">
+<span class="text-sm font-bold">All</span>
+</button>
+<button onclick="filterServices('finance')" class="filter-btn flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/5 border border-[#e5e7eb] dark:border-white/10 px-6 hover:bg-gray-50 dark:hover:bg-white/10 transition-colors" data-filter="finance">
+<span class="text-[#1b0e0e] dark:text-gray-200 text-sm font-medium">Finance</span>
+</button>
+<button onclick="filterServices('fashion')" class="filter-btn flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/5 border border-[#e5e7eb] dark:border-white/10 px-6 hover:bg-gray-50 dark:hover:bg-white/10 transition-colors" data-filter="fashion">
+<span class="text-[#1b0e0e] dark:text-gray-200 text-sm font-medium">Fashion</span>
+</button>
+<button onclick="filterServices('fitness')" class="filter-btn flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/5 border border-[#e5e7eb] dark:border-white/10 px-6 hover:bg-gray-50 dark:hover:bg-white/10 transition-colors" data-filter="fitness">
+<span class="text-[#1b0e0e] dark:text-gray-200 text-sm font-medium">Fitness</span>
+</button>
+<button onclick="filterServices('lifestyle')" class="filter-btn flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/5 border border-[#e5e7eb] dark:border-white/10 px-6 hover:bg-gray-50 dark:hover:bg-white/10 transition-colors" data-filter="lifestyle">
+<span class="text-[#1b0e0e] dark:text-gray-200 text-sm font-medium">Lifestyle</span>
+</button>
+</div>
+</section>
+<!-- Services Grid -->
+<section id="services-grid" class="w-full px-4 lg:px-40 py-10 flex justify-center">
+<div class="max-w-[1080px] w-full">
+<div class="mb-8">
+<h3 class="text-2xl font-bold dark:text-white">Our Expertise</h3>
+<p class="text-gray-500 dark:text-gray-400">Curated services for modern brands.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1: Finance -->
+<div class="service-card group relative flex flex-col gap-4 p-4 rounded-xl bg-white dark:bg-white/5 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10" data-category="finance">
+<div class="w-full aspect-[4/5] bg-cover bg-center rounded-lg overflow-hidden relative" data-alt="Abstract financial chart overlay on a modern office desk" style='background-image: url("images/FP&AInsights.jpeg");'>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<a href="workwithme.html#finance" class="bg-white text-primary px-6 py-2 rounded-full font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Learn More</a>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<p class="text-[#994d51] text-xs font-bold uppercase tracking-wider">Finance</p>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-xl">trending_up</span>
+</div>
+<h4 class="text-[#1b0e0e] dark:text-white text-lg font-bold leading-tight mb-2">FP&amp;A Insights</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed line-clamp-2">
+                                    Strategic financial planning and analysis designed to clarify complex data and drive growth for businesses.
+                                </p>
+</div>
+</div>
+<!-- Card 2: Fashion -->
+<div class="service-card group relative flex flex-col gap-4 p-4 rounded-xl bg-white dark:bg-white/5 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10" data-category="fashion">
+<div class="w-full aspect-[4/5] bg-cover bg-center rounded-lg overflow-hidden relative" data-alt="Fashion editorial shot of a woman in a red blazer" style='background-image: url("images/EditorialStyling.jpeg");'>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<a href="portfolio.html" class="bg-white text-primary px-6 py-2 rounded-full font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">View Portfolio</a>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<p class="text-[#994d51] text-xs font-bold uppercase tracking-wider">Fashion</p>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-xl">styler</span>
+</div>
+<h4 class="text-[#1b0e0e] dark:text-white text-lg font-bold leading-tight mb-2">Editorial Styling</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed line-clamp-2">
+                                    High-end fashion photography and styling services for brands looking to make a bold statement.
+                                </p>
+</div>
+</div>
+<!-- Card 3: UGC -->
+<div class="service-card group relative flex flex-col gap-4 p-4 rounded-xl bg-white dark:bg-white/5 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10" data-category="lifestyle">
+<div class="w-full aspect-[4/5] bg-cover bg-center rounded-lg overflow-hidden relative" data-alt="Influencer recording a video on a smartphone with a ring light" style='background-image: url("images/UGCCreation.jpg");'>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<a href="portfolio.html" class="bg-white text-primary px-6 py-2 rounded-full font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">See Examples</a>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<p class="text-[#994d51] text-xs font-bold uppercase tracking-wider">Social</p>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-xl">videocam</span>
+</div>
+<h4 class="text-[#1b0e0e] dark:text-white text-lg font-bold leading-tight mb-2">UGC Creation</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed line-clamp-2">
+                                    Authentic, engaging user-generated content that resonates with audiences and converts viewers into customers.
+                                </p>
+</div>
+</div>
+<!-- Card 4: Storytelling -->
+<div class="service-card group relative flex flex-col gap-4 p-4 rounded-xl bg-white dark:bg-white/5 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10" data-category="lifestyle">
+<div class="w-full aspect-[4/5] bg-cover bg-center rounded-lg overflow-hidden relative" data-alt="Close up of a fountain pen writing on luxury paper" style='background-image: url("images/BrandStorytelling.jpeg");'>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<a href="workwithme.html" class="bg-white text-primary px-6 py-2 rounded-full font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Read More</a>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<p class="text-[#994d51] text-xs font-bold uppercase tracking-wider">Marketing</p>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-xl">edit_note</span>
+</div>
+<h4 class="text-[#1b0e0e] dark:text-white text-lg font-bold leading-tight mb-2">Brand Storytelling</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed line-clamp-2">
+                                    Narrative-driven marketing strategies that define your voice and establish a lasting connection.
+                                </p>
+</div>
+</div>
+<!-- Card 5: Fitness -->
+<div class="service-card group relative flex flex-col gap-4 p-4 rounded-xl bg-white dark:bg-white/5 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10" data-category="fitness">
+<div class="w-full aspect-[4/5] bg-cover bg-center rounded-lg overflow-hidden relative" data-alt="Athletic woman tying shoelaces in a modern gym setting" style='background-image: url("images/FitnessModeling.JPG");'>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<a href="transformation.html" class="bg-white text-primary px-6 py-2 rounded-full font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Inquire</a>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<p class="text-[#994d51] text-xs font-bold uppercase tracking-wider">Fitness</p>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-xl">fitness_center</span>
+</div>
+<h4 class="text-[#1b0e0e] dark:text-white text-lg font-bold leading-tight mb-2">Fitness Modeling</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed line-clamp-2">
+                                    Representing athletic brands with a focus on strength, wellness, and a balanced lifestyle.
+                                </p>
+</div>
+</div>
+<!-- Card 6: Wellness -->
+<div class="service-card group relative flex flex-col gap-4 p-4 rounded-xl bg-white dark:bg-white/5 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10" data-category="lifestyle">
+<div class="w-full aspect-[4/5] bg-cover bg-center rounded-lg overflow-hidden relative" data-alt="Peaceful yoga setup with plants and soft lighting" style='background-image: url("images/WellnessCoaching.JPG");'>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<a href="contact.html" class="bg-white text-primary px-6 py-2 rounded-full font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Connect</a>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<p class="text-[#994d51] text-xs font-bold uppercase tracking-wider">Lifestyle</p>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-xl">self_improvement</span>
+</div>
+<h4 class="text-[#1b0e0e] dark:text-white text-lg font-bold leading-tight mb-2">Wellness Coaching</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed line-clamp-2">
+                                    Holistic lifestyle advice integrating financial health with physical and mental well-being.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trusted Collaborations -->
+<section class="w-full px-4 lg:px-40 py-16 bg-white dark:bg-white/5 flex justify-center mt-8">
+<div class="max-w-[1080px] w-full flex flex-col items-center">
+<h2 class="text-[#1b0e0e] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] mb-12">Trusted Collaborations</h2>
+<div class="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12 opacity-80">
+<!-- Logo 1 -->
+<div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 group">
+<div class="h-12 w-full bg-contain bg-center bg-no-repeat" data-alt="Vogue Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYWx_YelVz3IFBHkQFkC6l4pkJUd0Q76UtJkiXGcWYv2OYi9xhZyXRxEnj9zhhJ1KP8jYpEtMuE7L9_ym38kMcvVnjhyy8LD6qTEtIDs4Tw6Q7-OJq2_SY73v5A9EyzPfoC9gwY3kqPC5PoxW0oyUTbwmORSnh2fvQG77cUBErwbWkRpUOBO93rCkZqoU68DeA5hI0CVUyO5Xcwz0t6RwO6qqCcDYUh3NHdIeWrRRccmLHbBVCqz_ME_wdhOmBh8PbpCyz2ZML3A");'></div>
+</div>
+<!-- Logo 2 -->
+<div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 group">
+<div class="h-10 w-full bg-contain bg-center bg-no-repeat" data-alt="Forbes Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkCIVFgZj1YTxuPGPbl1b75Hk7nlndDzE7j44KEZ9Rz8p4ZKkEInsVO85IkK9SOM-VzxrurPHh5tb94uuWuPZ676xBwaohogADq_wVQNBmLZAfz54lVk9kYt7leLEg5HMgl8L9qkaHD7uxe6TsfPczxIxcukg-H-rNS3lnAxsZ57oTRw4oo1q3--dnU_fIhZPuCv2k558Wd8rxeCRJcklblClxmm-GVKnp2TAe39ZHUDECKmvR7L0VNq0dXmALiK91jJcsIadVzg");'></div>
+</div>
+<!-- Logo 3 -->
+<div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 group">
+<div class="h-12 w-full bg-contain bg-center bg-no-repeat" data-alt="Alo Yoga Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtJPcNmmnB9eSc2Zob-wDMN_uC7TgwEcsdlkLJYsdD1NWslsEkrw3OF58AeFsmhLT-vyM-4yD2mkc1SD63mk_qSNTCTqmIVsa8_EJ68FUG_rZZM6knG7Uk1NnYiNQW0EvnK1KFMhk6Z6o4JtpRAnS7e4Bbuo2eY0ehNT1BXnWwza7sG29g2pgiA5h_nqyqeJa1VWcZmQRf9RqZ9c-fAKFojR9-WhoPMd20ezNot5parGmTFLrG2XA6nPMrZUTjEyPsQUDo_-CNDQ");'></div>
+</div>
+<!-- Logo 4 -->
+<div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 group">
+<div class="h-8 w-full bg-contain bg-center bg-no-repeat" data-alt="Bloomberg Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNoHFkKq_9Q8dG8YOtYbmJwCw-DJ4fGFhFxlfrRMnejDoQMjdzzQlc8L19DUBdfn3wEcL5yTkV3DvW9qwbDg8wd803EabEQLaazrIBy9fu00TFCeUw7Bhu3MmM5SgbwCV250fDA9uhp4bXl0qu9S3Z42yhIPc1sbOwzqe_1AHgz5cp_cJwjXF1Y1W90N__rl9NT3Wh9xtWLJjEbUzedY5W9L0ZyGdB7eaGCUELzcv1ARQW0Kmm3lghFzcnkCbkEiFEO6_OGZjt5g");'></div>
+</div>
+<!-- Logo 5 -->
+<div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 group hidden lg:flex">
+<div class="h-8 w-full bg-contain bg-center bg-no-repeat" data-alt="Revolve Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAHXNPeTNCqobmzWdbQ8tkMHi0Uax5rbDkD8IqX0jS1x3lDIu6qUYWXs0z4ZXG7M2_5yIMwlxvlD_qVW9ZtX6UEQq8W4l-K-x1jPdHrpLVMzszUhErYFxotQDlsJzGMzB_v4ollv048Vr6cvv9c8yEqSemfwvB9iP4ZpNkT50lGyUsLAtL6cxG47rwwxSB4ioHNMYc-SMGh2Xi91AgzecJ3YTfj-TksQUfOP6hgc8ykJuRkUeswsDn_YxpJUyOwWwa-P1ECa1LeQ");'></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="w-full px-4 lg:px-40 py-20 flex justify-center bg-background-light dark:bg-background-dark">
+<div class="max-w-[960px] w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="flex flex-col gap-6 p-8 bg-white dark:bg-white/5 rounded-2xl shadow-sm border border-[#f3e7e8] dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-4xl">format_quote</span>
+<p class="text-xl font-serif italic text-[#1b0e0e] dark:text-gray-200 leading-relaxed">
+                            "Via seamlessly blends financial acumen with an impeccable eye for style. Her content doesn't just look good; it adds real value."
+                        </p>
+<div class="flex items-center gap-4 mt-auto">
+<div class="size-12 rounded-full bg-cover bg-center" data-alt="Profile picture of Sarah Jenkins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDyTXZWabxY9C3TnDDxOKTllG0rQreJ8SzY6pwonpRNwGk4KBRqSKd4clR3yPTmhS58WwQeNKruz-LH3PBl8I5Mr67YQ8jqLHJTmMoMZzks5WWpmuxpAB0_R7v8-o-kUuZZS_t5s1QnxzU038cuWm2yLCuVSwRBP_1FiKe0roSxHHm6J4hAk6WByRPXSAwXucbi8EPtLLFkPi2JbV9KRSeoSWuitgLPomYbCwq5VqlcG02KE1VMzdOQOisaz7UyDkkrDi91ExQBbw");'></div>
+<div>
+<p class="font-bold text-sm text-[#1b0e0e] dark:text-white">Sarah Jenkins</p>
+<p class="text-xs text-gray-500">CMO, FinStyle Corp</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 p-8 bg-white dark:bg-white/5 rounded-2xl shadow-sm border border-[#f3e7e8] dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-4xl">format_quote</span>
+<p class="text-xl font-serif italic text-[#1b0e0e] dark:text-gray-200 leading-relaxed">
+                            "Professional, punctual, and incredibly creative. Working with Via on our summer campaign was the highlight of our quarter."
+                        </p>
+<div class="flex items-center gap-4 mt-auto">
+<div class="size-12 rounded-full bg-cover bg-center" data-alt="Profile picture of Marcus Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbUjgZh_02jrmRNMRyGX838g35T2SXkuciJaOvjRHhHgEEuSSgl7PrzhgrosugRKUIF1zgVr4JOn70Bvd6OFvN5ChDvHU6cb7q_AmY1So54yEEgLVrDSwS_fUjysq3-Eag8PHBkKCBJRqwbxlpuF3EorBxGGJYC_VLlNQzdY0KMTKBbiogNQ2XclX0QjnVm04h_2e4GRmyYPzDc7TUTPmeAPDVjHIq6PW8Xcv5mE50I9rRzt0nxkUqCPVTLCSlXBXqbd0NemLhmA");'></div>
+<div>
+<p class="font-bold text-sm text-[#1b0e0e] dark:text-white">Marcus Chen</p>
+<p class="text-xs text-gray-500">Director, Luxe Fit</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Footer -->
+<section class="w-full px-4 py-20 bg-[#1b0e0e] flex flex-col items-center justify-center text-center">
+<h2 class="text-white text-3xl md:text-5xl font-bold mb-6 tracking-tight">Ready to collaborate?</h2>
+<p class="text-gray-400 max-w-lg mb-8 text-lg">Whether it's a financial consultation or a brand partnership, let's create something exceptional together.</p>
+<a href="contact.html" class="flex items-center justify-center h-14 px-10 bg-primary text-white text-lg font-bold rounded-lg hover:bg-red-700 transition-colors shadow-2xl shadow-primary/30">
+                    Start a Project
+                </a>
+</section>
+</main>
+<!-- Simple Footer -->
+<footer class="w-full py-8 bg-background-light dark:bg-background-dark border-t border-[#f3e7e8] dark:border-white/10 flex flex-col items-center gap-4">
+<div class="flex gap-6 text-gray-500 dark:text-gray-400">
+<a class="hover:text-primary transition-colors" href="mailto:hello@via.com"><span class="material-symbols-outlined">mail</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">dataset_linked</span></a>
+</div>
+<p class="text-xs text-gray-400">© 2024 Via Margarita Bangoy. All rights reserved.</p>
+</footer>
+</div>
+</body></html>
