@@ -66,14 +66,30 @@
 <a class="text-sm font-medium tracking-wider hover:text-primary transition-colors uppercase" href="contact.html">Contact</a>
 </div>
 <!-- Mobile Menu Icon -->
-<button class="lg:hidden text-text-dark dark:text-white p-2">
-<span class="material-symbols-outlined text-3xl">menu</span>
+<button id="mobile-menu-btn" class="lg:hidden text-text-dark dark:text-white p-2">
+    <span class="material-symbols-outlined text-3xl">menu</span>
 </button>
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-background-light dark:bg-background-dark transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col h-screen">
+    <div class="p-6 flex justify-end">
+        <button id="close-menu-btn" class="text-text-dark dark:text-white p-2 hover:text-primary transition-colors">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <nav class="flex flex-col items-center justify-center flex-1 gap-8 text-2xl font-medium">
+        <a class="hover:text-primary transition-colors uppercase" href="index.html">Home</a>
+        <a class="hover:text-primary transition-colors uppercase" href="about.html">About</a>
+        <a class="hover:text-primary transition-colors uppercase" href="services.html">Services</a>
+        <a class="hover:text-primary transition-colors uppercase" href="portfolio.html">Portfolio</a>
+        <a class="hover:text-primary transition-colors uppercase" href="transformation.html">Transformation</a>
+        <a class="hover:text-primary transition-colors uppercase" href="workwithme.html">Work With Me</a>
+        <a class="hover:text-primary transition-colors uppercase" href="contact.html">Contact</a>
+    </nav>
+</div>
 </div>
 </header>
 <!-- Hero Section -->
 <section class="relative flex w-full flex-col overflow-hidden">
-<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-8 md:py-16">
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center pt-24 pb-8 lg:pt-32 lg:pb-16">
 <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
 <div class="@container">
 <div class="flex flex-col gap-10 lg:flex-row items-center">
@@ -352,4 +368,26 @@
             © 2024 Via Margarita. All rights reserved.
         </div>
 </footer>
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+</script>
 </body></html>
